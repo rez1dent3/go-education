@@ -13,6 +13,7 @@ linters:
     - exhaustruct
     - tagalign
     - godox
+    - forbidigo
 linters-settings:
   lll:
     line-length: 140
