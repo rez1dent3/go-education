@@ -1,0 +1,33 @@
+run:
+  go: "1.22"
+  timeout: 1m
+linters:
+  enable-all: true
+  disable:
+    # deprecated
+    - execinquery
+    - gomnd
+    # not relevant
+    - wrapcheck
+    - paralleltest
+    - exhaustruct
+    - tagalign
+    - godox
+linters-settings:
+  lll:
+    line-length: 140
+  gci:
+    sections:
+      - Standard
+      - Default
+  depguard:
+    rules:
+      main:
+        allow:
+          - $gostd
+          - github.com
+issues:
+  exclude-rules:
+    - path: (.+)_test.go
+      linters:
+        - dupl
