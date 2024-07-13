@@ -1,6 +1,8 @@
 name: Unit
 on:
-  pull_request:
+  push:
+    branches:
+      - hw*
 
 jobs:
   test:
@@ -19,3 +21,4 @@ jobs:
           cache: true
       - name: Test with Go
         run: go test ./...
+        working-directory: ${{ github.ref_name }}
