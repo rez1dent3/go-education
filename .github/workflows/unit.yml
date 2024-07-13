@@ -20,5 +20,5 @@ jobs:
           go-version: ${{ matrix.go-version }}
           cache: true
       - name: Test with Go
-        run: go test ./...
+        run: go test -v -count=1 -race -timeout=1m ./...
         working-directory: ${{ github.ref_name }}
